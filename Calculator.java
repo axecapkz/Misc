@@ -3,31 +3,7 @@ import java.util.Scanner;
 public class Calculator {
     private static char operator;
     private static char choice;
-    private static double num1, num2, result;
-
-    // performs addition between numbers
-    private static double Addition(double num1, double num2) {
-        result = num1 + num2;
-        return result;
-    }
-
-    // performs subtraction between numbers
-    private static double Substraction(double num1, double num2) {
-        result = num1 - num2;
-        return result;
-    }
-
-    // performs multiplication between numbers
-    private static double Multiply(double num1, double num2) {
-        result = num1 * num2;
-        return result;
-    }
-
-    // performs division between numbers
-    private static double Division(double num1, double num2) {
-        result = num1 / num2;
-        return result;
-    }
+    private static long num1, num2, result;
 
     public static void main(String[] args) {
         // Creates an object of Scanner class
@@ -36,30 +12,38 @@ public class Calculator {
         do {
             // asks user to enter numbers
             System.out.println("Please enter numbers: ");
-            num1 = input.nextDouble();
+            num1 = input.nextLong();
             operator = input.next().charAt(0);
-            num2 = input.nextDouble();
+            num2 = input.nextLong();
 
             switch (operator) {
                 case '+':
                     System.out.println(
-                            "Result: " + num1 + " + " + num2 + " = " + Addition(num1, num2));
+                            "Result: " + num1 + " + " + num2 + " = " + mathOperations
+                                    .addition(num1, num2));
                     break;
 
                 case '-':
                     System.out.println(
-                            "Result: " + num1 + " - " + num2 + " = " + Substraction(num1,
-                                                                                    num2));
+                            "Result: " + num1 + " - " + num2 + " = " + mathOperations
+                                    .subtraction(num1, num2));
                     break;
 
                 case '*':
                     System.out.println(
-                            "Result: " + num1 + " * " + num2 + " = " + Multiply(num1, num2));
+                            "Result: " + num1 + " * " + num2 + " = " + mathOperations
+                                    .multiply(num1, num2));
                     break;
 
                 case '/':
-                    System.out.println(
-                            "Result: " + num1 + " / " + num2 + " = " + Division(num1, num2));
+                    if (num2 != 0) {
+                        System.out.println(
+                                "Result: " + num1 + " / " + num2 + " = " + mathOperations
+                                        .division(num1, num2));
+                    }
+                    else {
+                        System.out.println("Not a number");
+                    }
                     break;
 
                 default:
