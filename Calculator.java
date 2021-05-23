@@ -32,17 +32,12 @@ public class Calculator {
     public static void main(String[] args) {
         // Creates an object of Scanner class
         Scanner input = new Scanner(System.in);
-        
+
         do {
-
-            // asks user to enter operator
-            System.out.println("Please choose an operator: +, -, *, or /");
-            operator = input.next().charAt(0);
-
             // asks user to enter numbers
-            System.out.println("Please enter first number: ");
+            System.out.println("Please enter numbers: ");
             num1 = input.nextDouble();
-            System.out.println("Please enter second number: ");
+            operator = input.next().charAt(0);
             num2 = input.nextDouble();
 
             switch (operator) {
