@@ -11,7 +11,7 @@ public class Calculator {
 
         do {
             // asks user to enter numbers
-            System.out.println("Please enter numbers: ");
+            System.out.println("Please enter numbers:  ... for example \"1 + 3\"");
             num1 = input.nextLong();
             operator = input.next().charAt(0);
             num2 = input.nextLong();
