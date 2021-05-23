@@ -42,7 +42,7 @@ public class Calculator {
                                         .division(num1, num2));
                     }
                     else {
-                        System.out.println("Not a number");
+                        System.out.println("Division by zero. Not a number");
                     }
                     break;
 
