@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Calculator {
     private static char operator;
     private static char choice;
-    private static long num1, num2, result;
+    private static double num1, num2, result;
 
     public static void main(String[] args) {
         // Creates an object of Scanner class
@@ -13,9 +13,9 @@ public class Calculator {
             // asks user to enter numbers
             System.out.println(
                     "Please enter numbers:  ... for example \"1 + 3\" or \"9 / 3\" + etc...");
-            num1 = input.nextLong();
+            num1 = input.nextDouble();
             operator = input.next().charAt(0);
-            num2 = input.nextLong();
+            num2 = input.nextDouble();
 
             switch (operator) {
                 case '+':
