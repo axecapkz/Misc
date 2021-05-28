@@ -1,63 +1,34 @@
-import java.util.Scanner;
-
 public class Calculator {
-    private static char operator;
-    private static char choice;
-    private static double num1, num2, result;
+
+    public static void wNote() {
+        System.out.println(
+                "Please enter two arabic or roman numbers\"2 + 5\" or \"II + V\" to make simple calculation \n"
+                        + "Please note that numbers should be between 1 and 10 range \n"
+                        + "Valid operators:  + , - , * , /");
+    }
+
+    public static void missedOperator() {
+        System.out.println("Please use allowed numbers or operators");
+    }
+
+    public static void defineNumbers() {
+        wNote();
+        String inputLine = MathOperations.inputLine();
+        int divisorIndex = MathOperations.divisor(inputLine);
+        int num1 = MathOperations.firstNum(inputLine, divisorIndex);
+        int num2 = MathOperations.secondNum(inputLine, divisorIndex);
+        MathOperations.calc(inputLine, num1, num2, divisorIndex);
+    }
+
 
     public static void main(String[] args) {
-        // Creates an object of Scanner class
-        Scanner input = new Scanner(System.in);
 
-        do {
-            // asks user to enter numbers
-            System.out.println(
-                    "Please enter numbers:  ... for example \"1 + 3\" or \"9 / 3\" + etc...");
-            num1 = input.nextDouble();
-            operator = input.next().charAt(0);
-            num2 = input.nextDouble();
+        String s = "";
 
-            switch (operator) {
-                case '+':
-                    System.out.println(
-                            "Result: " + num1 + " + " + num2 + " = " + mathOperations
-                                    .addition(num1, num2));
-                    break;
-
-                case '-':
-                    System.out.println(
-                            "Result: " + num1 + " - " + num2 + " = " + mathOperations
-                                    .subtraction(num1, num2));
-                    break;
-
-                case '*':
-                    System.out.println(
-                            "Result: " + num1 + " * " + num2 + " = " + mathOperations
-                                    .multiply(num1, num2));
-                    break;
-
-                case '/':
-                    if (num2 != 0) {
-                        System.out.println(
-                                "Result: " + num1 + " / " + num2 + " = " + mathOperations
-                                        .division(num1, num2));
-                    }
-                    else {
-                        System.out.println("Division by zero. Not a number");
-                    }
-                    break;
-
-                default:
-                    System.out.println("Invalid operator! Please re-check.");
-                    break;
-            }
-            // get the choice from the user to add more number
-            System.out.print("Enter \"Y\" to continue or \"N\" to exit: ");
-            choice = input.next().charAt(0);
-
+        while (!s.equals("N")) {
+            defineNumbers();
+            System.out.println("Would you like to continue Y/N ?");
+            s = MathOperations.inputOut().toUpperCase();
         }
-        while (choice == 'Y' || choice == 'y');
-        input.close();
-
     }
 }
