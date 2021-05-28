@@ -112,29 +112,37 @@ public class MathOperations extends Calculator {
                         romanToArabic(num1 + num2);
                         break;
                     }
-                    System.out.println("Result: " + (num1 + num2));
-                    break;
+                    else {
+                        System.out.println("Result: " + (num1 + num2));
+                        break;
+                    }
                 case '-':
                     if (rNum) {
                         romanToArabic(num1 - num2);
                         break;
                     }
-                    System.out.println("Result: " + (num1 - num2));
-                    break;
+                    else {
+                        System.out.println("Result: " + (num1 - num2));
+                        break;
+                    }
                 case '*':
                     if (rNum) {
                         romanToArabic(num1 * num2);
                         break;
                     }
-                    System.out.println("Result: " + (num1 * num2));
-                    break;
+                    else {
+                        System.out.println("Result: " + (num1 * num2));
+                        break;
+                    }
                 case '/':
                     if (rNum) {
                         romanToArabic(num1 / num2);
                         break;
                     }
-                    System.out.println("Result: " + (num1 / num2));
-                    break;
+                    else {
+                        System.out.println("Result: " + (num1 / num2));
+                        break;
+                    }
                 default:
                     System.out.println(
                             "Calculator can't do math operations between arabic and roman numbers\n");
